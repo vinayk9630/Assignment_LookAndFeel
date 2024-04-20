@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seizure Detection Using EEG</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Seizure Detection Using EEG</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
+                <li><a href="sponsor.html">Sponsorship</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="living-with-epilepsy">
+            <div id="modal-placeholder"></div>
+
+            <h2>LIVING WITH EPILEPSY</h2>
+            <div class="content-container">
+                <div class="text-content">
+                    <h3>Understanding Epilepsy</h3>
+                    <p>Epilepsy is a serious brain ailment that is a common neurological disorder across the world. It is characterized by abnormal neurological electrical discharges in the brain. Epileptic seizures are among the most widespread positive indications and symptoms of brain disruption, making epilepsy a significant brain condition. Notably, seizures and epilepsy are among the most frequent neurological disorders affecting children and adolescents, with approximately 470,000 children diagnosed in the United States alone.</p>
+                </div>
+                <div class="image-content">
+                    <img src="./img/image_index1.jpg" alt="Epilepsy Information" style="width:100%; max-width:300px;">
+                </div>
+            </div>
+        </section>
+        <section id="data-eeg-reports">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>Epilepsy is a serious brain ailment that is a common neurological disorder across the world. It is a clinical outcome associated with abnormal neurological electrical discharge of the brain. Epileptic seizures are among the most widespread positive indications and symptoms of brain disruption, and epilepsy is a major brain condition. Seizures and epilepsy are among the most frequent neurological disorders affecting children and adolescents. There are 470,000 children with epilepsy in the United States. That means at least six students in a 1,000-student school are likely to have epilepsy.</p>
+                </div>
+                <div class="image-content">
+                    <img src="./img/dataset.jpg" alt="EEG Signal Representation" style=" width: -webkit-fill-available; " />
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Understanding EEG and Its Role in Epilepsy Diagnosis</h2>
+            <p>Electroencephalography (EEG) is a medical technique used to measure the electrical activity of the brain via sensors placed on the scalp. It is critical in diagnosing neurological disorders, particularly epilepsy, by detecting abnormalities in brain waves that indicate seizures.</p>
+        </section>
+        <section>
+            <h2>About the CHB-MIT EEG Dataset</h2>
+            <p>The CHB-MIT EEG dataset is a collection of EEG recordings from pediatric subjects with epilepsy, specifically designed for the development and testing of automated seizure detection systems. This dataset includes extensive EEG data and is a vital resource for researchers in the field.</p>
+            <a href="https://www.kaggle.com/datasets/adibadea/chbmitseizuredataset">Explore the CHB-MIT Dataset on Kaggle</a>
+        </section>
+        <section>
+            <h2>Applying Machine Learning to Seizure Detection</h2>
+            <p>Advanced machine learning and deep learning techniques, such as Convolutional Neural Networks (CNNs), are increasingly used to analyze EEG data for seizure detection. These models can learn to recognize patterns associated with seizures, offering significant improvements over traditional methods.</p>
+            <p>Studies and implementations on platforms like GitHub demonstrate the effectiveness of these technologies in real-world applications.</p>
+            <a href="https://github.com/search?q=seizure-detection">View Related Projects on GitHub</a>
+        </section>
+        <section>
+            <h2>EEG Data Visualization</h2>
+            <div id="eegVisualization"></div>
+        </section>
+        <section>
+            <h2>Machine Learning Model Performance</h2>
+            <div id="modelPerformanceChart"></div>
+        </section>
+        <section id="eeg-time-series">
+            <h2>EEG Time Series Data Visualization</h2>
+            <div id="timeSeriesVisualization"></div>
+        </section>
+        <section id="ml-performance-comparison">
+            <h2>Machine Learning Model Performance Comparison</h2>
+            <canvas id="performanceComparisonChart"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>  2024 Epilepsy and Seizure Detection Hub. All rights reserved.</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+</html>
