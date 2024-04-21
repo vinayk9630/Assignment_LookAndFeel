@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seizure Detection and Epilepsy Awareness</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Epilepsy Knowledge Hub - Blog Post</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>Epilepsy and Seizure Detection Hub</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+            <div><a href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a href="index.html">Home</a></div>
+            <div><a href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a href="sponsor.html">Sponsorship</a></div>
+            <div><a href="blogs.html">Blogs</a></div>
+            <div><a href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
         <article id="damon-story">
             <section class="story-section">
                 <h2>A Demon's Whispers, a story inspired by Damon Thorley's epilepsy</h2>
@@ -28,7 +50,7 @@
                 <p>Before I was diagnosed my first seizure happened in the January of 2009, shortly after I joined secondary school. This was my first time experiencing one, which startled my mother who called the ambulance where I spent some time in hospital recovering. </p>
                 <img src="https://epilepsysociety.org.uk/sites/default/files/inline-images/boy.jpg" alt="Damon as a boy">
                 <p>In the December of 2009 shortly before I was officially diagnosed with epilepsy one month later, I had my second seizure. This seizure has always been particularly memorable to me as it showcased to my entire school what I was going through. </p>
-                
+
             </section>
             <section class="story-section">
                 <h2>Struggles of living with epilepsy as a schoolboy</h2>
@@ -41,21 +63,34 @@
                 <p>These crippling results of my epilepsy often leave me feeling depressed as they take so long to heal that it is closer to the next incident that it is away. Every month a seizure I have aggravates my long-term injuries, the most prominent of which is not one of the above but instead a result of neglect of care whilst I was still under my paediatric neurology team.</p>
                 <img src="https://epilepsysociety.org.uk/sites/default/files/inline-images/teenager%20eeg.jpg" alt="Damon getting an EEG">
                 <p>My paediatric neurologists were often told by me that after a seizure my right shoulder would spend days with a strange sensation or aching feeling deep inside of it to which they always dismissed as an unimportant and irrelevant detail of my epilepsy. In my first year of college (2014) however my right shoulder joint finally gave in to the aching I had felt for the previous five years and dislocated. As it turned out the fact that every seizure, I ever had in my life involved me falling on my right side had ground the bone inside the joint into dust meaning that the joint had to have a screw surgically added to it to prevent constant dislocations.</p>
-                
+
             </section>
             <section class="story-section">
                 <h2>Pursuing my passions, and writing my book</h2>
                 <p>Outside of my epilepsy, writing has been a passion of mine ever since I was a child. When I was younger I would often try to write short stories on my computer or invent characters in my head and just imagine their story as my mind created it. As I got older, though I explored other pursuits I never lost my passion for creativity as I would spend each day during my walks to and from school plotting ideas in my head. </p>
 
                 <img src="https://epilepsysociety.org.uk/sites/default/files/inline-images/posing%20with%20book.jpg" alt="Damon posing with his book">
-                <p>When I started to write my debut book A Demon�s Whispers in late 2021 the main antagonist drew a great deal of inspiration from my experience living with epilepsy... </p>
+                <p>When I started to write my debut book A Demons Whispers in late 2021 the main antagonist drew a great deal of inspiration from my experience living with epilepsy... </p>
                 <p>The most major contributing factor was the hallucinations I have suffered across the various medications I have taken. Visual, auditory and tactile hallucinations have been a part of my life for a long time. The various extremities to which these have messed with my ability to trust my own senses I have tried to convey in the story.</p>
-                
+
             </section>
         </article>
+        <section id="comments-section">
+            <h2>Comments</h2>
+            <ul id="comments-list">
+                <!-- Comments will be added here by JavaScript -->
+            </ul>
+            <h3>Add a Comment</h3>
+            <form id="add-comment-form">
+                <input type="text" id="username" name="username" placeholder="Your Name" required>
+                <textarea id="comment" name="comment" placeholder="Write a comment..." required></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </section>
     </main>
     <footer>
-        <p>� 2024 Damon Thorley's Story. All rights reserved.</p>
+        <p>2024 Epilepsy knowledge Hub. All rights reserved.</p>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 </html>
