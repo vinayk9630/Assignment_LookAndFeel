@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seizure Detection Using EEG</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Epilepsy Knowledge Hub</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>Seizure Detection Using EEG</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+            <div><a href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a href="index.html">Home</a></div>
+            <div><a href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a href="sponsor.html">Sponsorship</a></div>
+            <div><a href="blogs.html">Blogs</a></div>
+            <div><a href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
         <section id="living-with-epilepsy">
             <div id="modal-placeholder"></div>
 
@@ -35,51 +57,112 @@
                 </div>
             </div>
         </section>
+
         <section id="data-eeg-reports">
             <div class="content-wrapper">
+                <h1>EEG Scans and Reports</h1>
                 <div class="text-content">
-                    <p>Epilepsy is a serious brain ailment that is a common neurological disorder across the world. It is a clinical outcome associated with abnormal neurological electrical discharge of the brain. Epileptic seizures are among the most widespread positive indications and symptoms of brain disruption, and epilepsy is a major brain condition. Seizures and epilepsy are among the most frequent neurological disorders affecting children and adolescents. There are 470,000 children with epilepsy in the United States. That means at least six students in a 1,000-student school are likely to have epilepsy.</p>
+                    <h3>What is an EEG?</h3>
+                    <p>
+                        An electroencephalogram (EEG) is a non-invasive diagnostic test used to record brain waves in real time. Diagnosing a person’s specific seizure type(s) can greatly help in selecting the appropriate treatment and understanding what kind of epilepsy one has. This allows doctors to understand the typical brain activity so that they can observe for anomalies, like a seizure.
+
+                        Results from an EEG test are used along with the description of the seizure (from a bystander or caregiver who may have witnessed the seizure) and a physical and neurological exam to help a physician identify the seizure type as well as the type of epilepsy or syndrome.
+                    </p>
+
+                </div>
+                <div class="image-content">
+                    <img src="https://cureepilepsy.org/wp-content/uploads/2022/06/360_F_280811498_jpaEsrXRUsnwhcJRpm5nW7VpGFbwKyju.jpg" alt="Epilepsy Information" style="width:100%; max-width:500px; " />
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>
+                        <ul>
+                            <li>
+                                For every patient experiencing seizures/epilepsy , it is recommended that EEG (Electroencephalography) and MRI (Magnetic Resonance Imaging) scans be
+                                conducted to comprehensively assess their condition and provide an accurate status update. EEG  reports of seizures usually indicate abnormal electrical
+                                activity in the brain.
+                            </li>
+                            <li>
+                                During a seizure, the EEG may show rhythmic spikes or sharp waves, which indicate excessive neural activation. The pattern and location of these
+                                anomalies can aid in diagnosing the kind of seizure and determining the best therapy. EEG reports frequently include data on background brain activity,
+                                which can give insight into the patient's general brain function and help in management decisions.
+                            </li>
+
+                        </ul>
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <section id="data-eeg-reports">
+            <h1>data-eeg-reports</h1>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>
+                        EEG signals are separated into α, β, δ and θ spectral components and provide a wide range of frequency components.
+                        EEG spectrum contains some characteristic waveforms that fall primarily within four frequency bands as follows: δ(0.5-4 Hz), θ(4-8 Hz), α(8-13 Hz),
+                        and β (13- 30 Hz) . EEG data set has acquired different age groups in this study. They are known epileptic with uncontrolled seizures and are admitted to
+                        the neurology department of the Medical Faculty Hospital of Dicle University. EEG signals are to ensure the accuracy of diagnosing disease that usually is
+                        taken 8-10 hours in the form of records.The EEG signals that are contained by PCI-MIO 16E DAQ card system that provides real time processing and is a data bus
+                        of computer, signal processor and personal computer.
+                    </p>
                 </div>
                 <div class="image-content">
                     <img src="./img/dataset.jpg" alt="EEG Signal Representation" style=" width: -webkit-fill-available; " />
                 </div>
             </div>
+
         </section>
-        <section>
-            <h2>Understanding EEG and Its Role in Epilepsy Diagnosis</h2>
-            <p>Electroencephalography (EEG) is a medical technique used to measure the electrical activity of the brain via sensors placed on the scalp. It is critical in diagnosing neurological disorders, particularly epilepsy, by detecting abnormalities in brain waves that indicate seizures.</p>
+        <section id="dos-donts">
+            <h1>Here's a list of Do's and Dont's:</h1>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Do's'</th>
+                        <th>Dont's'</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul><li>Do move objects and/or furniture away from the person having a seizure so that they don’t injure themselves.</li></ul>
+                        </td>
+                        <td><ul><li>Do NOT try to hold someone down when they’re having a seizure.</li></ul></td>
+
+                    </tr>
+                    <tr>
+                        <td><ul><li>JDo time the seizure and call for emergency help if the seizure lasts more than 5 minutes, if there are repeated seizures, or if the person is injured or has difficulty breathing.</li></ul></td>
+                        <td><ul><li>Do NOT (and I mean NEVER) try to put anything in the mouth of someone having a seizure. (Some think you should put an object like a ruler in the mouth to stop the person having a seizure from biting their tongue, but it’s more likely that you’ll get bitten or they’ll bite a piece off the object and choke on it.)</li></ul></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><ul><li>Do make the individual comfortable when the seizure stops.</li></ul></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><ul><li>Do consider turning the person on their side after the seizure during the period of recovery.</li></ul></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><ul><li>Do expect to find that the person who has had the seizure will be confused and tired afterwards.</li></ul></td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
         </section>
-        <section>
-            <h2>About the CHB-MIT EEG Dataset</h2>
-            <p>The CHB-MIT EEG dataset is a collection of EEG recordings from pediatric subjects with epilepsy, specifically designed for the development and testing of automated seizure detection systems. This dataset includes extensive EEG data and is a vital resource for researchers in the field.</p>
-            <a href="https://www.kaggle.com/datasets/adibadea/chbmitseizuredataset">Explore the CHB-MIT Dataset on Kaggle</a>
-        </section>
-        <section>
-            <h2>Applying Machine Learning to Seizure Detection</h2>
-            <p>Advanced machine learning and deep learning techniques, such as Convolutional Neural Networks (CNNs), are increasingly used to analyze EEG data for seizure detection. These models can learn to recognize patterns associated with seizures, offering significant improvements over traditional methods.</p>
-            <p>Studies and implementations on platforms like GitHub demonstrate the effectiveness of these technologies in real-world applications.</p>
-            <a href="https://github.com/search?q=seizure-detection">View Related Projects on GitHub</a>
-        </section>
-        <section>
-            <h2>EEG Data Visualization</h2>
-            <div id="eegVisualization"></div>
-        </section>
-        <section>
-            <h2>Machine Learning Model Performance</h2>
-            <div id="modelPerformanceChart"></div>
-        </section>
-        <section id="eeg-time-series">
-            <h2>EEG Time Series Data Visualization</h2>
-            <div id="timeSeriesVisualization"></div>
-        </section>
-        <section id="ml-performance-comparison">
-            <h2>Machine Learning Model Performance Comparison</h2>
-            <canvas id="performanceComparisonChart"></canvas>
-        </section>
+
     </main>
     <footer>
-        <p>  2024 Epilepsy and Seizure Detection Hub. All rights reserved.</p>
+        <p>2024 Epilepsy Knowledge Hub. All rights reserved.</p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
