@@ -3,46 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Seizure Detection Hub</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>About Us - Epilepsy Knowledge Hub</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>About Us</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+            <div><a class="nav-link" href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a class="nav-link" href="index.html">Home</a></div>
+            <div><a class="nav-link" href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a class="nav-link" href="sponsor.html">Sponsorship</a></div>
+            <div><a class="nav-link" href="blogs.html">Blogs</a></div>
+            <div><a class="nav-link" href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
-        <section id="team">
-            <h2>Meet the Team</h2>
-            <p>Our team is composed of dedicated researchers, developers, and advocates focused on improving epilepsy care through technology. Here are a few key members:</p>
-            <ul>
-                <li>John Doe - Project Lead</li>
-                <li>Jane Smith - Lead Developer</li>
-                <li>Emma Brown - Research Specialist</li>
-            </ul>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
+        <section class="blog-posts">
+            <article class="blog-post">
+                <img src="./img/team1.jpg" alt="Image description">
+                <h2>Vinay Kasturi</h2>
+                <p>collaborated with the team for the development of front-end components using HTML and CSS,Implementing dynamic functionalities using JavaScript, developed web-based comment section feature for our project blog page and Ensuring the user interface is user-friendly and accessible, Testing and debugging web Pages.</p>
+                <h3>ID: U12941198</h3>
+            </article>
+            <article class="blog-post">
+                <img src="./img/team2.jpg" alt="Image description">
+                <h2>Gayatri Sowbhagya Lakshmi Akkireddi</h2>
+                <p>Gathered relevant data, including user preferences. Worked on web design along with development. Also identified issues and usability concerns and collaborated to implement necessary fixes and improvements.</p>
+                <h3>ID: U37764178</h3>
+            </article>
+            <article class="blog-post">
+                <img src="./img/team3.jpg" alt="Image description">
+                <h2>Dakshanya Alokam</h2>
+                <p>collaborated with the team to develop user-friendly and accessible front-end components using HTML, CSS, and JavaScript. I helped them whenever required to do anything related to web designing and development. We tried to give the maximum usability problems identification and fixing on one side and add all possible features and necessary improvements on the other.</p>
+                <h3>ID: U37764178</h3>
+            </article>
+        </section>
+        <section id="about-project">
+            <h2>About Project</h2>
+            <p>Our team has developed the Epilepsy Knowledge Hub website,serving as a valuable resource for individuals grappling with epilepsy-related challenges in today's society.This platform provides accurate data, support, and resources aimed to suit the requirements of persons living with epilepsy.The website promotes a sense of community and belonging by including personal narratives and experiences, encouraging visitors that they are not alone on their journey by showcasing the most recent advances in research and treatment choices, the platform inspires optimism for better results and a brighter future.</p>
         </section>
         <section id="data-model">
-            <h2>Our Data Model</h2>
-            <p>This diagram shows how our site's data is structured to provide insights and functionality effectively:</p>
-            <img src="data-model.png" alt="Data Model of the Website" style="width:100%; max-width:600px;">
+            <h2>Data Process Model</h2>
+            <h3>ERD-Diagram</h3>
+            <img src="./img/model.jpeg" alt="Data Model of the Website" style="width:100%; max-width:600px;">
+            <h3>Data Process Flow</h3>
+            <img src="./img/data-model.jpeg" alt="Data Model of the Website" style="width:100%; max-width:600px;">
         </section>
         <section id="github-repo">
             <h2>Our GitHub Repository</h2>
-            <p>Our project is open-source, and we encourage collaboration. You can view and contribute to our code here:</p>
-            <a href="https://github.com/your-repository-link">Visit our GitHub Repository</a>
+            <p>You can view and contribute to our code here:</p>
+            <a href="https://github.com/vinayk9630/Assignment_LookAndFeel">Visit our GitHub Repository</a>
         </section>
+        <br />
+        <br />
+        <br />
     </main>
     <footer>
-        <p>  2024 Seizure Detection Hub. All rights reserved.</p>
+        <p>2024 Epilepsy Knowledge Hub. All rights reserved.</p>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 </html>
