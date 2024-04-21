@@ -4,75 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seizure Detection and Epilepsy Awareness</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Epilepsy Knowledge Hub</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>Epilepsy and Seizure Detection Hub</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-                <button id="modalBtn">Sign Up / Login</button>
-            </ul>
+            <div><a href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a class="nav-link" href="index.html">Home</a></div>
+            <div><a class="nav-link" href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a class="nav-link" href="sponsor.html">Sponsorship</a></div>
+            <div><a class="nav-link" href="blogs.html">Blogs</a></div>
+            <div><a class="nav-link" href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
-        <section id="living-with-epilepsy">
-            <div id="modal-placeholder"></div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
 
-            <h2>LIVING WITH EPILEPSY</h2>
-            <div class="content-container">
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
+        <div class="image-header">
+            <br /><br />
+            <h1 class="text-header">Its Time To Take&emsp;&emsp;&emsp; Action Together</h1>
+            <h3> &emsp;Your life-changing gift helps us educate, advocate, and find cures</h3>
+            <br />
+            <br />
+        </div>
+        <section id="what-is-epilepsy" class="epilepsy-section">
+            <h2>What is Epilepsy?</h2>
+            <p>Epilepsy is a neurological disorder characterized by recurrent, unprovoked seizures. It is diagnosed after a person has experienced two unprovoked seizures, or one unprovoked seizure with a high likelihood of more, unrelated to a specific cause. Seizures manifest as sudden bursts of electrical activity in the brain that can affect appearance or behavior.</p>
+            <p>For more in-depth information, visit the <a href="https://www.epilepsy.com/what-is-epilepsy">Epilepsy Foundation's detailed guide on epilepsy</a>.</p>
+        </section>
+        <section id="epilepsy-reports">
+            <div class="content-wrapper">
                 <div class="text-content">
-                    <h3>Understanding Epilepsy</h3>
-                    <p>Epilepsy is a serious brain ailment that is a common neurological disorder across the world. It is characterized by abnormal neurological electrical discharges in the brain. Epileptic seizures are among the most widespread positive indications and symptoms of brain disruption, making epilepsy a significant brain condition. Notably, seizures and epilepsy are among the most frequent neurological disorders affecting children and adolescents, with approximately 470,000 children diagnosed in the United States alone.</p>
+                    <h2>Symptoms of Epilepsy</h2>
+                    <p>
+                        Seizures can affect people in different ways, depending on which part of the brain is involved.
+                        Possible symptoms include:
+                        <ul class="list-item">
+                            <li>Uncontrollable jerking and shaking, called a "fit"</li>
+                            <li>Losing awareness and staring blankly into space</li>
+                            <li>Becoming stiff</li>
+                            <li>Strange sensations, such as a "rising" feeling in the tummy, unusual smells or tastes, and a tingling feeling in your arms or legs</li>
+                            <li>Collapsing</li>
+                            Sometimes you might pass out and not remember what happened.
+                        </ul>
+                    </p>
                 </div>
-                <div class="image-content">
-                    <img src="./img/image_index1.jpg" alt="Epilepsy Information" style="width:100%; max-width:300px;">
+                <div class="index-image">
+                    <img src="./img/index1.jpg" alt="Epilepsy Information" />
+                    <img src="./img/index2.jpg" alt="Epilepsy Information" />
                 </div>
             </div>
         </section>
-
-            <!-- The Modal (hidden by default) -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-
-                    <!-- Registration Form -->
-                    <form id="registerForm" style="display:none;">
-                        <h2>Sign Up</h2>
-                        <input type="text" placeholder="Name" name="name" required>
-                        <input type="email" placeholder="Email" name="email" required>
-                        <input type="password" placeholder="Password" name="password" required>
-                        <input type="submit" value="Sign Up">
-                    </form>
-
-                    <!-- Login Form -->
-                    <form id="loginForm">
-                        <h2>Login</h2>
-                        <input type="email" placeholder="Email" name="email" required>
-                        <input type="password" placeholder="Password" name="password" required>
-                        <input type="submit" value="Login">
-                    </form>
-
-                    <!-- Toggle Forms -->
-                    <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
-                </div>
-
-            </div>
-
+        <h1><a href="blogs.html">Latest Blog Posts</a></h1>
+        <section class="blog-posts">
+            <article class="blog-post">
+                <img src="./img/blog1.jpg" alt="Image description">
+                <h2>A Demon's Whispers, a story inspired by Damon Thorley's epilepsy</h2>
+                <p>Damon is a 26 year old author, who recently published his debut book 'A Demon's Whispers', where the main antagonist is heavily based from his experience of living with epilepsy. He tells us about his life with epilepsy, everything from dealing with bullying in school, and depression.</p>
+                <p class="author">By Maytee Ramos, April 18, 2024</p>
+                <button class="read-more"><a href="blog1.html"> Read More </a></button>
+            </article>
+            <article class="blog-post">
+                <img src="./img/blog4.jpg" alt="Image description">
+                <h2>Artist Noëmi Manser: Art has been her safe, healing space.</h2>
+                <p>Noëmi Manser, a Swiss born conceptual artist and muralist, grew up with epilepsy. Her art series ‘Connecting Brains’ depicts symbolic androgynous faces which she hopes will highlight the importance of uniting individuals and encouraging human connections.</p>
+                <p class="author">By Noëmi Manser, 3 November, 2022</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
+            </article>
+            <article class="blog-post">
+                <img src="./img/blog3.jpg" alt="Image description">
+                <h2>The challenge of becoming a mum with epilepsy</h2>
+                <p>Lyndsey, 26, describes the impact that her epilepsy has had on her and her little boy, Caelan, and explains why she and her partner have opted for genetic screening before having a second baby by IVF.</p>
+                <p class="author">By Nicola Swanborough, 5 May, 2021</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
+            </article>
+        </section>
 
     </main>
     <footer>
-        <p>  2024 Epilepsy and Seizure Detection Hub. All rights reserved.</p>
+        <p>2024 Epilepsy Knowledge Hub. All rights reserved. </p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
