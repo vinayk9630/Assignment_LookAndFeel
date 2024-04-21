@@ -4,76 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seizure Detection and Epilepsy Awareness</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Epilepsy Patient Blogs</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>Epilepsy and Seizure Detection Hub</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+            <div><a href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a href="index.html">Home</a></div>
+            <div><a href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a href="sponsor.html">Sponsorship</a></div>
+            <div><a href="blogs.html">Blogs</a></div>
+            <div><a href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
         <section class="blog-posts">
             <article class="blog-post">
-                <img src="./img./blog1.jpg" alt="Image description">
+                <img src="./img/blog1.jpg" alt="Image description">
                 <h2>A Demon's Whispers, a story inspired by Damon Thorley's epilepsy</h2>
-                <p>Damon is a 26 year old author, who recently published his debut book 'A Demon's Whispers', where the main antagonist is heavily based from his experience of living with epilepsy. In this blog, he tells us about his life with epilepsy, everything from dealing with bullying in school, long-term physical injuries, and depression.</p>
+                <p>Damon is a 26 year old author, who recently published his debut book 'A Demon's Whispers', where the main antagonist is heavily based from his experience of living with epilepsy. He tells us about his life with epilepsy, everything from dealing with bullying in school, and depression.</p>
                 <p class="author">By Maytee Ramos, April 18, 2024</p>
-                <button class="read-more">Read More</button>
+                <button class="read-more"><a href="blog1.html"> Read More </a></button>
             </article>
             <article class="blog-post">
-                <img src="./img./blog2.jpg" alt="Image description">
+                <img src="./img/blog4.jpg" alt="Image description">
+                <h2>Artist Noëmi Manser: Art has been her safe, healing space.</h2>
+                <p>Noëmi Manser, a Swiss born conceptual artist and muralist, grew up with epilepsy. Her art series ‘Connecting Brains’ depicts symbolic androgynous faces which she hopes will highlight the importance of uniting individuals and encouraging human connections.</p>
+                <p class="author">By Noëmi Manser, 3 November, 2022</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
+            </article>
+            <article class="blog-post">
+                <img src="./img/blog3.jpg" alt="Image description">
+                <h2>The challenge of becoming a mum with epilepsy</h2>
+                <p>Lyndsey, 26, describes the impact that her epilepsy has had on her and her little boy, Caelan, and explains why she and her partner have opted for genetic screening before having a second baby by IVF.</p>
+                <p class="author">By Nicola Swanborough, 5 May, 2021</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
+            </article>
+        </section>
+        <section class="blog-posts">
+            <article class="blog-post">
+                <img src="./img/blog2.jpg" alt="Image description">
                 <h2>How epilepsy cost me my dream career</h2>
                 <p>Dan was 21 and serving as a medic in the Royal Navy when he was diagnosed with epilepsy. He was devastated to lose his dream job but is determined not to let epilepsy define him. He is now studying nursing at university and has applied to join the police. He hopes his story will help others, particularly those in the armed forces.</p>
                 <p class="author">By Nicola Swanboroug, 14 October, 2021</p>
                 <button class="read-more">
-                    <a href="blog1.html"> read More </a>
+                    <a href="#"> Read More </a>
                 </button>
             </article>
             <article class="blog-post">
-                <img src="./img./blog3.jpg" alt="Image description">
-                <h2>The challenge of becoming a mum with epilepsy</h2>
-                <p>Lyndsey, 26, describes the impact that her epilepsy has had on her and her little boy, Caelan, and explains why she and her partner have opted for genetic screening before having a second baby by IVF.</p>
-                <p class="author">By Nicola Swanborough, 5 May, 2021</p>
-                <button class="read-more">Read More</button>
-            </article>
-        </section>
-        <section class="blog-posts">
-            <article class="blog-post">
-                <img src="./img./blog1.jpg" alt="Image description">
-                <h2>A Demon's Whispers, a story inspired by Damon Thorley's epilepsy</h2>
-                <p>Damon is a 26 year old author, who recently published his debut book 'A Demon's Whispers', where the main antagonist is heavily based from his experience of living with epilepsy. In this blog, he tells us about his life with epilepsy, everything from dealing with bullying in school, long-term physical injuries, and depression.</p>
-                <p class="author">By Maytee Ramos, April 18, 2024</p>
-                <button class="read-more">Read More</button>
+                <img src="./img/blog5.jpg" alt="Image description">
+                <h2>Why epilepsy means I can't read to my son for longer than five minutes</h2>
+                <p>Chris Sharp talks about how his epilepsy is triggered by reading and how he cannot share a book with his young son for longer than five minutes</p>
+                <p class="author">By Nicola Swanboroug, 4 March, 2021</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
             </article>
             <article class="blog-post">
-                <img src="./img./blog2.jpg" alt="Image description">
-                <h2>How epilepsy cost me my dream career</h2>
-                <p>Dan was 21 and serving as a medic in the Royal Navy when he was diagnosed with epilepsy. He was devastated to lose his dream job but is determined not to let epilepsy define him. He is now studying nursing at university and has applied to join the police. He hopes his story will help others, particularly those in the armed forces.</p>
-                <p class="author">By Nicola Swanboroug, 14 October, 2021</p>
-                <button class="read-more">Read More</button>
-            </article>
-            <article class="blog-post">
-                <img src="./img./blog3.jpg" alt="Image description">
-                <h2>The challenge of becoming a mum with epilepsy</h2>
-                <p>Lyndsey, 26, describes the impact that her epilepsy has had on her and her little boy, Caelan, and explains why she and her partner have opted for genetic screening before having a second baby by IVF.</p>
-                <p class="author">By Nicola Swanborough, 5 May, 2021</p>
-                <button class="read-more">Read More</button>
+                <img src="./img/blog6.jpg" alt="Image description">
+                <h2>Why NICE is right to be cautious about recommending medicinal cannabis for two childhood epilepsy syndromes</h2>
+                <p>Last week, the UK's medical advisory body, NICE, announced it would not be recommending that cannabidiol, a medicinal cannabis in the form of Epidyolex</p>
+                <p class="author">By Ley Sander, 3 September, 2019</p>
+                <button class="read-more"><a href="#"> Read More </a></button>
             </article>
         </section>
     </main>
     <footer>
-        <p>  2024 Epilepsy and Seizure Detection Hub. All rights reserved.</p>
+        <p>2024 Epilepsy Knowledge Hub. All rights reserved.</p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
