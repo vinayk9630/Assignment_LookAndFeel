@@ -4,39 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Coverage for Epilepsy</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header>
-        <h1>Health Coverage for Epilepsy</h1>
+        <h1>Epilepsy Knowledge Hub</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="epilepsy.html">Living With Epilepsy</a></li>
-                <li><a href="sponsor.html">Sponsorship</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="help.html">Help</a></li>
-            </ul>
+            <div><a href="index.html"><img cls="img-logo" src="./img/logo.jpg" /></a></div>
+            <div><a href="index.html">Home</a></div>
+            <div><a href="epilepsy.html">Living With Epilepsy</a></div>
+            <div><a href="sponsor.html">Sponsorship</a></div>
+            <div><a href="blogs.html">Blogs</a></div>
+            <div><a href="about-us.html">About Us</a></div>
+            <button id="modalBtn">Sign Up / Login</button>
         </nav>
     </header>
     <main>
-        <section id="challenges">
-            <h2>Challenges in Healthcare Access</h2>
-            <p>Understanding the barriers faced by epilepsy patients in accessing needed healthcare services and medications is crucial. Details on high costs, insurance complexities, and limited access to specialized care are common challenges that hinder effective management of epilepsy.</p>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <form id="registerForm" style="display:none;">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+
+                <form id="loginForm">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email" name="email" required>
+                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="submit" value="Login">
+                </form>
+
+                <p id="formToggle">Don't have an account? <a href="#" id="toggleLink">Sign up here</a></p>
+            </div>
+
+        </div>
+        <section id="aca-coverage">
+            <h2>Understanding the Affordable Care Act (ACA)</h2>
+            <img src="./img/doc1.jpg" alt="Alternate Text" />
+            <p>The Affordable Care Act (ACA) Marketplaces provide individual and family insurance provided through private companies with subsidies to help people afford the premiums. The law that created the Marketplaces also included many insurance reforms, including protections to ensure coverage for people with pre-existing conditions like epilepsy and an end to lifetime and annual dollar limits on coverage, and the option for states to expand their Medicaid programs.</p><br />
+            <p>The ACA has helped get many more Americans with the epilepsies covered. In 2010 and 2013, prior to the ACA being fully implemented, 17.7% of adults aged 18-64 living with active epilepsy were uninsured. After the ACA went into effect, in 2015 and 2017, the rate of uninsured adults living with active epilepsy dropped to 7.3% (National declines in the percentages of uninsured among adults aged 18–64 years with active epilepsy, 2010 and 2013 to 2015 and 2017—U.S. National Health Interview Survey, Kobau R., Sapkota S., Koh H.K., Zack M.M. (2019) Epilepsy and Behavior).</p>
         </section>
-        <section id="advocacy">
-            <h2>Policy Advocacy for Better Health Coverage</h2>
-            <p>Highlighting the critical role of advocacy in shaping policies that ensure comprehensive coverage for epilepsy care. Efforts from various organizations have led to improvements in health policy, aiming to cover all aspects of epilepsy management, including medication, therapy, and emergency care.</p>
+        <section>
+            <h2>Medicaid</h2>
+            <p>Medicaid is a joint state-federal health insurance program that provides health services for over 70 million low-income Americans – including one third of people living with the epilepsies. Each state administers their own Medicaid program according to certain parameters issued by the Centers for Medicare and Medicaid Services (CMS). Medicaid is the primary payer of long-term services and supports including home- and community-based services. The Affordable Care Act (ACA) allowed states to expand Medicaid eligibility to all individuals with household income below 138 percent of the federal poverty line and receive significant federal funds to pay for these new beneficiaries.</p>
         </section>
-        <section id="data-visualization">
-            <h2>Impact of Policy Changes on Health Outcomes</h2>
-            <div id="healthDataChart"></div>
+        <section>
+            <h2>Medicare</h2>
+            <p>Medicare provides health insurance for Americans age 65 and older, and to younger people with disabilities. Approximately 1.1 million Medicare beneficiaries are living with epilepsy. Medicare beneficiaries receive coverage for inpatient and outpatient care and may opt-in to prescription drug benefits provided by a stand-alone prescription drug plan. Alternatively, Medicare beneficiaries may choose a private health plan to administer all of their benefits, known as Medicare Advantage. Medicare is one of the only remaining forms of coverage in the U.S. that does not have an out-of-pocket maximum.</p>
+        </section>
+        <section>
+            <h2>Telehealth</h2>
+            <p>Through the COVID-19 public health emergency, federal and state agencies and private insurance provided flexibilities to increase access to care via telehealth, particularly in the Medicare program. Flexibilities in government-sponsored programs like Medicare remain in place as long as the public health emergency continues. There is indication that private payers have started to restrict coverage of telehealth put in place earlier in the pandemic. Bills at the federal and state level have been introduced to extend telehealth as an option even after the public health emergency ends.</p>
         </section>
     </main>
+    <br />
     <footer>
-        <p>© 2024 Health Coverage for Epilepsy. All rights reserved.</p>
+        <p>2024 Epilepsy Knowledge Hub. All rights reserved.</p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
