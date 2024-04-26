@@ -93,7 +93,9 @@ nav div {
     color: black; /* Example text color */
 }
 
-
+p{
+    font-size:large;
+}
 
 main {
     padding: 20px;
@@ -372,6 +374,19 @@ button {
     .delete-btn:hover {
         background-color: #d32f2f; /* Darker red on hover */
     }
+
+
+#blog-stats {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+    #blog-stats canvas {
+        width: 100%;
+        max-width: 600px;
+        height: 400px; /* Adjust based on your layout needs */
+    }
+    
 
 
 /* Tablet styles (Devices with width from 768px to 1023px) */
