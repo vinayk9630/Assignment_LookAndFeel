@@ -1,445 +1,157 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var commentsCtx = document.getElementById('commentsChart').getContext('2d');
+    var viewsCtx = document.getElementById('viewsChart').getContext('2d');
+
+    // Data for comments chart
+    var commentsChart = new Chart(commentsCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4'], // Blog post titles
+            datasets: [{
+                label: 'Number of Comments',
+                data: [14, 21, 10, 7], // Number of comments for each post
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Data for views chart
+    var viewsChart = new Chart(viewsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4'], // Blog post titles
+            datasets: [{
+                label: 'Number of Views',
+                data: [120, 190, 30, 50], // Number of views for each post
+                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(153, 102, 255, 1)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+
+
+
+//register 
+/// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById('modalBtn');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName('close')[0];
+
+// Get the toggle link
+var formToggle = document.getElementById('formToggle');
+
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// Get the forms and the toggle link
+var registerForm = document.getElementById('registerForm');
+var loginForm = document.getElementById('loginForm');
+var toggleLink = document.getElementById('toggleLink');
+
+// Toggle forms when the 'Sign up here' link is clicked
+toggleLink.onclick = function (event) {
+    event.preventDefault();  // Prevent the default anchor link behavior
+    registerForm.style.display = 'block'; // Show the register form
+    loginForm.style.display = 'none'; // Hide the login form
+    formToggle.style.display = 'none'; // Hide the toggle message
+}
+
+
+
+
+
+//comments
+
+document.getElementById('add-comment-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const commentText = document.getElementById('comment').value.trim();
+
+    if (username && commentText) {
+        const commentElement = document.createElement('li');
+        const textContent = document.createTextNode(`${username}: ${commentText} `);
+        commentElement.appendChild(textContent);
+
+        // Create Edit Button
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.onclick = function () {
+            const newComment = prompt('Edit your comment:', textContent.textContent);
+            if (newComment !== null) {
+                textContent.textContent = newComment;
+            }
+        };
+        editBtn.classList.add('edit-btn');
+
+        // Create Delete Button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.onclick = function () {
+            this.parentNode.remove(); // Removes the comment element when clicked
+        };
+        deleteBtn.classList.add('delete-btn');
+
+        // Append buttons to the comment element
+        commentElement.appendChild(editBtn);
+        commentElement.appendChild(deleteBtn);
+
+        // Append the comment element to the list
+        document.getElementById('comments-list').appendChild(commentElement);
+
+        // Clear the form fields
+        document.getElementById('username').value = '';
+        document.getElementById('comment').value = '';
+    } else {
+        alert('Please fill in both fields!');
+    }
+});
+
 /**
-Sample css code
-*/
-/* Set height to 100% for body and html to enable the background image to cover the whole page: */
-body,
-html {
-  height: 100%;
-}
-
-/*Set background image*/
-.container {
-  background-image: url('https://doc-10-ao-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/r085o9ungppbiokopob2sfbekae4uqbb/1537920000000/14802840322886517493/*/110cT8sl-pOiHGgj9yToPkAqAzrr-RNfb');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  color: beige;
-  top: 70%;
-  left: 39%;
-  text-align: center;
-  font-size: 25px;
-}
-
-/*Set circle in unordered list*/
-.middle ul {
-  list-style-type: circle;
-}
-
-/*Set text inside li tag to left*/
-.middle ul li {
-  text-align: left !important;
-}
-
-/*Set text color for a tag inside middle class and ul>li element*/
-.middle ul li a {
-  color: beige;
-}
-
-/*Change text color and decoration for a tags inside middle class and ul>li element*/
-.middle ul li a:hover {
-  color: red;
-  text-decoration: none;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('background.jpg'); /* Adjust path as needed */
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-header {
-    background-color: rgba(0, 90, 156, 0.8);
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-nav div {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-}
-
-nav div {
-    display: inline;
-}
-
-    nav div a {
-        text-decoration: none;
-        color: white; /* Default text color */
-        padding: 15px 20px;
-        display: inline-block;
-    }
-
-    nav div img {
-        width: 40px;
-    }
-
-    nav div a:hover {
-        color: #4CAF50; /* Color on hover */
-    }
-
-.active-nav-link {
-    /* Add styles for the active state */
-    background-color: #f4f4f4; /* Example background color */
-    color: black; /* Example text color */
-}
-
-p{
-    font-size:large;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
-    background-color: #CBC3E3;
-    margin: 20px;
-    border-radius: 8px;
-}
-
-.content-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.text-content, .image-content {
-    flex: 1;
-    padding: 10px;
-}
-
-.image-header {
-    background-image: url('home.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-    text-align: left;
-}
-
-.text-header {
-    font-size: 100px;
-}
-
-section {
-    background-color: white;
-    margin: auto;
-    padding: 20px;
-    width: 80%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.list-item {
-    text-align: left
-}
-
-#modalBtn {
-    background-color: #4CAF50;
-}
-
-button {
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.content-wrapper {
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.index-image img {
-    width: 100%;
-    max-width: 450px;
-    padding: 50px;
-}
-
-.image-content {
-    max-width: 1100px;
-}
-
-.blog-posts {
-    display: flex;
-}
-
-.blog-post {
-    background-color: white;
-    margin: 10px;
-    padding: 25px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    border-radius: 5px;
-}
-
-    .blog-post img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-
-.author {
-    color: #555;
-    font-size: 0.9em;
-    margin-top: 10px;
-}
-
-article {
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.story-section img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-
-/*register*/
-/* Modal (background) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-/* Add styles for form fields and submit button */
-input[type=text], input[type=email], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-    input[type=submit]:hover {
-        opacity: 0.8;
-    }
-
-/*sponsor*/
-#aca-coverage img {
-    width: inherit;
-}
-
-
-/* blogs comments*/
-#comments-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-#comments-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-    #comments-list li {
-        background-color: white;
-        margin: 8px 0;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
-
-#add-comment-form {
-    margin-top: 20px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-}
-
-button {
-    padding: 10px 20px;
-    background-color: gainsboro;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-    button a {
-        text-decoration: none;
-    }
-
-    button:hover {
-        background-color: darkgray;
-    }
-
-
-.edit-btn, .delete-btn {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.edit-btn {
-    background-color: #4CAF50; /* Green background for edit */
-    color: white;
-}
-
-    .edit-btn:hover {
-        background-color: #45a049; /* Darker green on hover */
-    }
-
-.delete-btn {
-    background-color: #f44336; /* Red background for delete */
-    color: white;
-}
-
-    .delete-btn:hover {
-        background-color: #d32f2f; /* Darker red on hover */
-    }
-
-
-#blog-stats {
-    padding: 20px;
-    margin-top: 20px;
-}
-
-    #blog-stats canvas {
-        width: 100%;
-        max-width: 600px;
-        height: 400px; /* Adjust based on your layout needs */
-    }
-    
-
-
-/* Tablet styles (Devices with width from 768px to 1023px) */
-@media (max-width: 1023px) {
-    .modal-content {
-        width: 70%; /* Slightly smaller modal on tablets */
-    }
-
-    .main-content {
-        grid-template-columns: repeat(2, 1fr); /* Fewer columns on tablets */
-    }
-
-    .footer {
-        flex-direction: column;
-    }
-
-    .blog-posts {
-        display: block;
-        padding: 0px;
-        width: fit-content;
-    }
-}
-/* Mobile styles (Devices with width up to 767px) */
-@media (max-width: 767px) {
-
-
-    .text-header {
-        font-size: 55px;
-    }
-
-    .index-image img {
-        padding: 0px;
-    }
-
-    h3 {
-        text-align: center;
-    }
-
-    .blog-posts {
-        display: block;
-        padding: 0px;
-        width: fit-content;
-    }
-
-    main {
-        padding: 0;
-        margin: 0;
-    }
-
-    .content-container {
-        display: block;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 20px;
-    }
-}
+ * Sample code
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  var ulElement = document.getElementById('links');
+  var liElement = document.createElement('li');
+  liElement.appendChild(document.createTextNode('created by main.js'));
+
+  ulElement.appendChild(liElement);
+});
