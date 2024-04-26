@@ -1,12 +1,59 @@
- document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll('nav > div');
-    navLinks.forEach(div => {
-        div.addEventListener('click', function () {
-            // Remove active class from all divs
-            navLinks.forEach(d => d.classList.remove('active-nav-link'));
-            // Add active class to the clicked div
-            this.classList.add('active-nav-link');
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    var commentsCtx = document.getElementById('commentsChart').getContext('2d');
+    var viewsCtx = document.getElementById('viewsChart').getContext('2d');
+
+    // Data for comments chart
+    var commentsChart = new Chart(commentsCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4'], // Blog post titles
+            datasets: [{
+                label: 'Number of Comments',
+                data: [14, 21, 10, 7], // Number of comments for each post
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Data for views chart
+    var viewsChart = new Chart(viewsCtx, {
+        type: 'line',
+        data: {
+            labels: ['Post 1', 'Post 2', 'Post 3', 'Post 4'], // Blog post titles
+            datasets: [{
+                label: 'Number of Views',
+                data: [120, 190, 30, 50], // Number of views for each post
+                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(153, 102, 255, 1)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     });
 });
 
